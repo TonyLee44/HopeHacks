@@ -41,7 +41,8 @@ li a:hover {
   background-color: white;
   box-shadow: black;
   transition: 0.3s;
-  border-radius: 5px;
+  border-radius: 20px;
+  margin-top: 30%;
 }
 .shopp:hover {
   box-shadow: 0 4px 8px 0 black;
@@ -49,6 +50,20 @@ li a:hover {
 .cardcon {
   padding: 20px 20px;
 }
+
+/* mapApi */
+.mapApi {
+    position: relative;
+  bottom: 75%;
+  right: 10%;
+ 
+}
+
+ .mapApi img{
+     
+
+    
+} 
 
 /* nav bar */
 
@@ -105,4 +120,5 @@ body {
   .sidenav a {
     font-size: 18px;
   }
+}
 }
