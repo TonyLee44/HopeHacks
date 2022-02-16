@@ -5,68 +5,41 @@ const bodyParser = require('body-parser')
 
 const apiKey = "f49dbbfa8e3250b4fa99956c3ea9d2eb";
 
-// let city = 'Chicago'
+app.set('view engine', 'ejs')
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(express.static('public'));
 
-// let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+app.get('/', (req,res) => {
+    res.render('index');
+})
 
+app.post('/', (req,res) => {
+let city = req.body.city;
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
+request(url, function(err,res,body) {
 
-// app.set('view engine', 'ejs')
-// app.use(bodyParser.urlencoded({extended : true}));
-// app.use(express.static('public'));
+    if(err) {
+        console.log(`Error: ${err}`)
+        res.render('index', {weather : null, error: err})
+    } else {
+        // console.log(`Body: ${body}`)
 
-// app.get('/', (req,res) => {
-//     res.render('index');
-// })
+        let weather = JSON.parse(body);
 
+        let message = `It is ${weather.main.temp} degrees outside in ${weather.name}`;
 
-
-// app.post('/', (req,res) => {
-// let city = req.body.city;
-// let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
-
-// request(url, function(err,res,body) {
-
-//     if(err) {
-//         console.log(`Error: ${err}`)
-//     } else {
-//         // console.log(`Body: ${body}`)
-
-//         let weather = JSON.parse(body);
-
-//         let message = `It is ${weather.main.temp} degrees outside in ${weather.name}`;
-
-//         console.log(message)
+        console.log(message)
 
 
         
-//     }
+    }
 
 
-// })
-// })
+})
 
+})
 
-
-// request(url, function(err,res,body) {
-
-//     if(err) {
-//         console.log(`Error: ${err}`)
-//     } else {
-//         // console.log(`Body: ${body}`)
-
-//         let weather = JSON.parse(body);
-
-//         let message = `It is ${weather.main.temp} degrees outside in ${weather.name}`;
-
-//         console.log(message)
-
-
-
-//     }
-
-
-// })
 
 
 
