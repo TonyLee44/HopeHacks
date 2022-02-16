@@ -4,14 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Testing 123 </h1>
-    <h1>Hope Hacks Group 1</h1>
-    <h2>lets git it
-    </h2>
-    <h3>How do I pull</h3>
+    <!-- header & Slogan -->
+    <h1 class="appTitle">Planet Progress</h1>
+    <h2 class="appSlogan">Run on Air</h2>
+
+    <!-- nav bar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <h2>Animated Sidenav Example</h2>
+      <p>Click on the element below to open the side navigation menu.</p>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "150px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>
+         
+     
+
+
+
+    <!-- Grid boxes -->
+    <!--  -->
+    <div class="grid-Container">
+        <div class="shopp extraApi">
+        <img src="img/gliter.jpg" alt="Gliter Cup">
+        <div class="cardcon">
+        <h2> Add on number 1 </h2>
+        </div>
+    </div>
+
+    <div class="shopp extraApi">
+        <img src="img/pink.jpeg" alt="Pink Cup">
+        <div class="cardcon">
+        <h2> Add on number 2</h2>
+        </div>
+    </div>
+
+    <!-- charging stations / google maps -->
+    <div class="shopp mapApi">
+        <img src="/img/google.map.png" alt="Naruto Cup">
+        <div class="cardcon">
+        <h2>Charging stations</h2>
+    </div>
+    </div>
+
+    <!-- Air pollution percentages -->
+    <div class="shopp pollutionApi">
+        <img src="img/ama.jpg" alt="Among Us Cup">
+        <div class="cardcon">
+        <h2>Air pollution</h2>
+        
+      
+        
+        </div>
+    </div>
+    
+
 </body>
 <script src="index.js"></script>
 </html>
