@@ -4,8 +4,10 @@
   text-align: center;
 }
 #nav-lines {
-  color: white;
-  z-index: 1000;
+    padding: 29px;
+    display: block;
+    color: blue;
+    z-index: 1000;
 }
 
 /* Grid boxes */
@@ -94,7 +96,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0px;
-  /* padding-left: 33px; */
+  padding-left: 33px;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.3s;
