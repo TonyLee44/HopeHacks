@@ -4,10 +4,10 @@
   text-align: center;
 }
 #nav-lines {
-    padding: 29px;
-    display: block;
-    color: blue;
-    z-index: 1000;
+  padding: 29px;
+  display: block;
+  color: blue;
+  z-index: 1000;
 }
 
 /* Grid boxes */
@@ -54,7 +54,7 @@ li a:hover {
   box-shadow: black;
   transition: 0.3s;
   border-radius: 20px;
-  margin-top: 30%;
+  margin-top: 10%;
 }
 .shopp:hover {
   box-shadow: 0 4px 8px 0 black;
@@ -75,8 +75,13 @@ li a:hover {
 
 /* pollutionApi */
 .pollutionApi {
-  margin-left: 225%;
-  margin-top: -60%;
+  /* margin-left: 225%;
+  /* margin-top: -80px; */
+  padding-top: 40%; 
+  position: relative;
+  z-index: 1;
+  bottom: 120%;
+  left: 200%;
 }
 
 /* nav bar */
