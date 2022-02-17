@@ -1,3 +1,13 @@
+/* application-Title */
+
+.application-title {
+  text-align: center;
+}
+#nav-lines {
+  color: white;
+  z-index: 1000;
+}
+
 /* Grid boxes */
 header {
   width: 100%;
@@ -53,17 +63,19 @@ li a:hover {
 
 /* mapApi */
 .mapApi {
-    position: relative;
+  position: relative;
   bottom: 75%;
   right: 10%;
- 
 }
 
- .mapApi img{
-     
+.mapApi img {
+}
 
-    
-} 
+/* pollutionApi */
+.pollutionApi {
+  margin-left: 225%;
+  margin-top: -60%;
+}
 
 /* nav bar */
 
@@ -71,13 +83,18 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+/* sidenav:hover {
+  background-color: thistle;
+} */
+
 .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  left: 0px;
+  /* padding-left: 33px; */
   background-color: #111;
   overflow-x: hidden;
   transition: 0.3s;
@@ -108,17 +125,17 @@ body {
 }
 /* Making it Responsisve @Media  */
 
-@media only screen and (max-width:400px){
-    .grid-Container{
-        grid-template-columns: repeat(1,12fr);
-    }
+@media only screen and (max-width: 400px) {
+  .grid-Container {
+    grid-template-columns: repeat(1, 12fr);
+  }
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
   }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 }
