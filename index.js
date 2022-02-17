@@ -1,6 +1,5 @@
 const request = require("request");
 const express = require('express')
-const app = express()
 const bodyParser = require('body-parser')
 
 const apiKey = "e6f95f46a3dc82ac8e8ff584311ce59b"
