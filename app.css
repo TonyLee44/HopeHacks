@@ -1,7 +1,10 @@
 /* buttons */
-.btn-clickMe{
-     text-align: justify;
-    margin-top: 10px;
+body {
+  background-color: lightsteelblue;
+}
+.btn-clickMe {
+  text-align: justify;
+  margin-top: 10px;
   background-color: #555;
   color: white;
   font-size: 16px;
@@ -70,7 +73,6 @@ li a:hover {
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 35px;
-  background-color: white;
 }
 .grid-Container > div {
   text-align: center;
@@ -89,6 +91,8 @@ li a:hover {
   transition: 0.3s;
   border-radius: 20px;
   margin-top: 10%;
+  background-color: lightslategrey;
+  padding-bottom: 0;
 }
 .shopp:hover {
   box-shadow: 0 4px 8px 0 black;
@@ -104,17 +108,15 @@ li a:hover {
   right: 10%;
 }
 
-
-
 /* pollutionApi */
 .pollutionApi {
-  /* margin-left: 225%;
-  /* margin-top: -80px; */
+  /* margin-left: 225%; */
+  /* margin-top: 5%; */
   padding-top: 40%;
   position: relative;
   z-index: 1;
-  bottom: 110%;
-  left: 200%;
+  bottom: 95%;
+  left: 202%;
 }
 
 /* nav bar */
