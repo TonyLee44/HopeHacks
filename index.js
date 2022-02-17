@@ -17,6 +17,8 @@ app.get('/', (req,res)=>{
     res.render('index')
 })
 
+
+
 app.post('/', (req,res)=>{
     let city = req.body.city
 
@@ -31,7 +33,7 @@ app.post('/', (req,res)=>{
 
             let list = JSON.parse(body)
 
-            let message = `It is ${list.main.aqi} degrees outside`
+            let message = `It is ${list.main} degrees outside`
             console.log(message)
         }
 
