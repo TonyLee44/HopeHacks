@@ -38,35 +38,35 @@ input[type="text"]:focus {
 /* application-Title */
 
 .application-title {
-  text-align: center;
+text-align: center;
 }
 #nav-lines {
-  padding: 29px;
-  display: block;
-  color: blue;
-  z-index: 1000;
+padding: 29px;
+display: block;
+color: blue;
+z-index: 1000;
 }
 
 /* Grid boxes */
 header {
-  width: 100%;
+width: 100%;
 }
 ul {
-  list-style-type: none;
-  overflow: hidden;
-  background-color: salmon;
+list-style-type: none;
+overflow: hidden;
+background-color: salmon;
 }
 li {
-  float: left;
+float: left;
 }
 li a {
-  display: inline-block;
-  color: white;
-  padding: 1em;
-  text-decoration: none;
+display: inline-block;
+color: white;
+padding: 1em;
+text-decoration: none;
 }
 li a:hover {
-  background-color: thistle;
+background-color: thistle;
 }
 .grid-Container {
   display: grid;
@@ -75,13 +75,13 @@ li a:hover {
   grid-gap: 35px;
 }
 .grid-Container > div {
-  text-align: center;
-  padding: 20px 0;
+text-align: center;
+padding: 20px 0;
 }
 .shopp img {
-  height: 150px;
-  width: 150px;
-  display: center;
+height: 150px;
+width: 150px;
+display: center;
 }
 .shopp {
   margin-left: 20%;
@@ -95,17 +95,17 @@ li a:hover {
   padding-bottom: 0;
 }
 .shopp:hover {
-  box-shadow: 0 4px 8px 0 black;
+box-shadow: 0 4px 8px 0 black;
 }
 .cardcon {
-  padding: 20px 20px;
+padding: 20px 20px;
 }
 
 /* mapApi */
 .mapApi {
-  position: relative;
-  bottom: 75%;
-  right: 10%;
+position: relative;
+bottom: 75%;
+right: 10%;
 }
 
 /* pollutionApi */
@@ -122,62 +122,62 @@ li a:hover {
 /* nav bar */
 
 body {
-  font-family: "Lato", sans-serif;
+font-family: "Lato", sans-serif;
 }
 
 /* sidenav:hover {
-  background-color: thistle;
+background-color: thistle;
 } */
 
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0px;
-  padding-left: 33px;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
-  border-radius: 0px 30px;
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0px;
+padding-left: 33px;
+background-color: #111;
+overflow-x: hidden;
+transition: 0.3s;
+padding-top: 60px;
+border-radius: 0px 30px;
 }
 
 /* content of nav bar */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+color: #f1f1f1;
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
 }
 /* Making it Responsisve @Media  */
 
 @media only screen and (max-width: 400px) {
-  .grid-Container {
-    grid-template-columns: repeat(1, 12fr);
-  }
+.grid-Container {
+  grid-template-columns: repeat(1, 12fr);
+}
 
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-    .sidenav a {
-      font-size: 18px;
-    }
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
 }
