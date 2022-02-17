@@ -1,13 +1,41 @@
+/* buttons */
+.btn-clickMe{
+    text-align: justify;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+/* search Bar */
+input[type="text"] {
+  position: relative;
+  left: 65%;
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 100%;
+}
+
 /* application-Title */
 
 .application-title {
   text-align: center;
 }
 #nav-lines {
-    padding: 29px;
-    display: block;
-    color: blue;
-    z-index: 1000;
+  padding: 29px;
+  display: block;
+  color: blue;
+  z-index: 1000;
 }
 
 /* Grid boxes */
@@ -54,7 +82,7 @@ li a:hover {
   box-shadow: black;
   transition: 0.3s;
   border-radius: 20px;
-  margin-top: 30%;
+  margin-top: 10%;
 }
 .shopp:hover {
   box-shadow: 0 4px 8px 0 black;
@@ -75,8 +103,13 @@ li a:hover {
 
 /* pollutionApi */
 .pollutionApi {
-  margin-left: 225%;
-  margin-top: -60%;
+  /* margin-left: 225%;
+  /* margin-top: -80px; */
+  padding-top: 40%;
+  position: relative;
+  z-index: 1;
+  bottom: 120%;
+  left: 200%;
 }
 
 /* nav bar */
