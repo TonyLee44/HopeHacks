@@ -34,7 +34,7 @@ app.get('/airquality', (req,res)=>{
 axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
   .then(function (response) {
     // handle success
-    console.log(response.data[0].lat);
+    console.log(response.data);
 
     let lat = response.data[0].lat;
     let lon = response.data[0].lon;
