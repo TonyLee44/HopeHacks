@@ -4,22 +4,30 @@
   width: 100%;
   display: center;
   object-fit: none;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 .pollution-img{
     height: 100%;
   width: 100%;
   display: center;
-  object-fit:contain;
-  border-radius: 5px;
+  /* object-fit:contain; */
+  border-radius: 20px;
 }
 
 .modern-img{
     height: 100%;
     width: 100%;
     display: center;
+    /* object-fit:contain; */
+    border-radius: 20px;  
+}
+
+.tesla-img{
+    height: 100%;
+    width: 100%;
+    display: center;
     object-fit:contain;
-    border-radius: 5px;  
+    border-radius: 20px;
 }
 
 
@@ -104,7 +112,7 @@ li a:hover {
 }
 .grid-Container > div {
   text-align: center;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 
