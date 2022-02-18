@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const { reset } = require("nodemon");
 
 const apiKey = "e6f95f46a3dc82ac8e8ff584311ce59b"
+const EVapiKey = 'd4182b2b-8414-4c99-b02a-7322b40cb629'
 
 // let city = 'Chicago'
 
@@ -39,7 +40,21 @@ axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey
     let lon = response.data[0].lon;
 
     console.log(lat, lon);
+    let EVurl = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`
+    
+    request(EVurl, function (err,response,body2){
+        if(err){
+            console.log(`Error: ${err}`)
+        }
+        else{
+            let EVNum = JSON.parse(body2)
 
+            let message = `There are ${EVNum.length} charging stations within 1 mile of ${city}`
+            res.send(message);
+            console.log(message);
+        }
+    })
+    
     let url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`
 
     request(url, function(err,response,body){
@@ -61,7 +76,7 @@ axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey
             res.send(message)
             
         }
-
+    
     })
 
     
