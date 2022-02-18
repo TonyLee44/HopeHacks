@@ -1,10 +1,46 @@
+/* imgs for blocks */
+.map-img {
+    height: 100%;
+  width: 100%;
+  display: center;
+  object-fit: none;
+  border-radius: 20px;
+}
+.pollution-img{
+    height: 100%;
+  width: 100%;
+  display: center;
+  /* gits  */
+  border-radius: 20px;
+}
+
+.modern-img{
+    height: 100%;
+    width: 100%;
+    display: center;
+    /* object-fit:contain; */
+    border-radius: 20px;  
+}
+
+.tesla-img{
+    height: 100%;
+    width: 100%;
+    display: center;
+    object-fit:contain;
+    border-radius: 20px;
+}
+
+
 /* buttons */
 body {
   background-color: lightsteelblue;
 }
 .btn-clickMe {
-  text-align: justify;
-  margin-top: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   background-color: #555;
   color: white;
   font-size: 16px;
@@ -83,6 +119,8 @@ height: 150px;
 width: 150px;
 display: center;
 }
+
+
 .shopp {
   margin-left: 20%;
   width: 65%;
@@ -112,10 +150,10 @@ right: 10%;
 .pollutionApi {
   /* margin-left: 225%; */
   /* margin-top: 5%; */
-  padding-top: 40%;
+  /* padding-top: 40%; */
   position: relative;
   z-index: 1;
-  bottom: 95%;
+  bottom: 40%;
   left: 202%;
 }
 
