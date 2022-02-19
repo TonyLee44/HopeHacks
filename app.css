@@ -73,9 +73,18 @@ input[type="text"]:focus {
 
 /* application-Title */
 
-.application-title {
-text-align: center;
+.application-title img {
+    position: relative;
+    top: 10%;
+    left:30%;
+    height:500px;
+    width: 500px;
+    display: center;
+    object-fit:contain;
+    border-radius: 20x;
+    background-color: lightsteelblue;
 }
+
 #nav-lines {
 padding: 29px;
 display: block;
