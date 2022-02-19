@@ -1,3 +1,16 @@
+/* hero */
+.hero__wrap {
+    
+    padding: 90px;
+    position: relative;
+    height: 700px;
+    width: 1500px;
+    background-image: url("./img/wearesocial.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+   
+}
 /* imgs for blocks */
 .map-img {
     height: 100%;
