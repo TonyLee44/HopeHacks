@@ -1,6 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    
+  }
+  body{
+    background-color: white;
   }
   hero_text p {
     font-size: 90%;
@@ -11,7 +16,7 @@
     width: 100%;
     padding-bottom: 5px;
     border-bottom: 5px solid #fd6621;
-    background-color: black;
+    /* background-color: black; */
     padding-top: 10px;
     margin-top: 10px;
     border-top: 5px solid #fd6621;
@@ -50,6 +55,11 @@
     width: 50%;
     padding: 10px;
   }
+  .column2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
   .RSB_para {
     font-family: sans-serif;
     font-size: 25px;
@@ -58,10 +68,18 @@
     margin-right: 10%;
     text-align: center;
   }
-  .row {
-    border-radius: 25px;
-    background: black;
-    background-position: left top;
+  section{
+    grid-template-columns: 500px 1fr 3fr;
+
+  }
+  /* .row {
+      display: grid;
+  height: 100px; */
+  /* grid-template-columns: 500px 1fr 3fr; */
+  /* grid-template-rows: 30px 1fr; */
+    /* border-radius: 25px; */
+    /* background: black; */
+    /* background-position: left top; 
     background-repeat: repeat;
     z-index: 3;
     margin-top: 5%;
@@ -69,14 +87,16 @@
     padding-left: 5%;
     padding-bottom: 1%;
     padding-top: 3%;
-  }
+
+*/
   
   .deck_para {
     font-family: sans-serif;
     font-size: 25px;
     margin-left: 10%;
     margin-right: 10%;
-    text-align: center;
+    /* text-align: center; */
+    float: right;
   }
   
   .RSB {
@@ -97,7 +117,7 @@
   html {
     font-family: Garamond;
     font-size: 18px;
-    background-color: #242f3b;
+    /* background-color: #242f3b; */
     color: white;
   }
   
@@ -116,13 +136,19 @@
     overflow: hidden;
     padding-top: 1%;
   }
-  .rail {
-    width: 100%;
-    padding-right: 5px;
-    width: 100%;
+  .rail img{
+    border: 1px solid navy;
+    /* padding-right: 5px; */
+    width: 50px;
+    height: 50px;
+    float: left;
+    clear: left;
   }
+ 
+
+
   .hero__wrap {
-    background-image: url("./img/halfpipe.jpeg");
+    background-image: url("./img/wooooohero.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -168,7 +194,7 @@
   position: relative;
   height: 90vh;
   /* width: 50%; */
-  background-image: url("./img/lightbulb.jpeg");
+  background-image: url("./img/wooooohero.png");
   background-repeat: no-repeat;
   /* background-size: cover;
     opacity: .5; */
@@ -194,15 +220,11 @@
   border-radius: 80px 10px 80px 10px;
 }
 
-section h1 {
+/* section h1 {
   margin: 0%;
-}
+} */
 
 /* this line corresponds to footer  */
-* {
-  box-sizing: border-box;
-}
-
 .row:after {
   content: "";
   display: table;
@@ -215,6 +237,7 @@ section h1 {
   }
 }
 .column {
+  
   float: left;
   width: 50%;
   padding: 10px;
@@ -227,8 +250,10 @@ section h1 {
   margin-right: 10%;
   text-align: center;
 }
-.row {
-  border-radius: 25px;
+/* .row { */
+  /* grid-column-start: 1;
+  grid-column-end: 5; */
+  /* border-radius: 25px;
   background: black;
   background-position: left top;
   background-repeat: repeat;
@@ -238,26 +263,26 @@ section h1 {
   padding-left: 5%;
   padding-bottom: 1%;
   padding-top: 3%;
-}
+} */
 
-.deck_para {
+/* .deck_para {
   font-family: sans-serif;
   font-size: 25px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
-}
+} */
 
-.RSB {
+/* .RSB {
   margin: 0;
   text-align: center;
   justify-content: center;
-}
+} */
 
-.Decks {
+/* .Decks {
   margin: 0;
   text-align: center;
-}
+} */
 .pollution-img {
   height: 100%;
   width: 100%;
@@ -267,7 +292,7 @@ html {
   font-family: Garamond;
   font-size: 18px;
   background-color: #242f3b;
-  color: white;
+  color: black
 }
 
 .modern-img {
@@ -287,9 +312,9 @@ html {
 }
 
 /* buttons */
-body {
+/* body {
 background-color: lightsteelblue;
-}
+} */
 .btn-clickMe {
 position: absolute;
 top: 50%;
@@ -369,18 +394,29 @@ li a:hover {
   background-color: thistle;
 }
 .grid-Container {
-display: grid;
-width: 100%;
-grid-template-columns: repeat(3, 1fr);
-grid-gap: 35px;
+  background-color: white;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: auto, auto; */
+  display: grid;
+  width: 100%;
+/* grid-template-columns: repeat(3, 1fr); */
+ grid-gap: 35px;
 }
+/* .shopp-extraApi{
+  grid-row: 2/3;
+
+
+} */
+/* .shopp-pollutionApi{
+grid-column: 3/4;
+} */
 .grid-Container > div {
   text-align: center;
   padding: 20px 0;
 }
 .shopp img {
-  height: 150px;
-  width: 150px;
+  height: 50px;
+  width: 50px;
   display: center;
 }
 
@@ -420,6 +456,28 @@ bottom: 40%;
 left: 202%;
 }
 
+/*contact page */
+.ctr input{
+  margin-left: -70em;
+  width: 200px;
+  height: 50px;
+}
+.ctr {
+   text-align: center;
+  }
+.ctr form{
+  margin-top: 5em;
+}
+.ctr label{
+  margin-left: 5em;
+  padding:2em;
+      color: black;
+  }
+  form{
+    width: 900px;
+    border: 10px solid black;
+    display: inline-block;
+  }
 /* nav bar */
 
 /* body {
@@ -464,6 +522,13 @@ left: 202%;
   font-size: 36px;
   margin-left: 50px;
 } */
+.rail2{
+  height: 100%;
+  width: 100%;
+  display: center;
+  object-fit: contain;
+  border-radius: 20px;
+}
 /* Making it Responsisve @Media  */
 
 @media only screen and (max-width: 400px) {
