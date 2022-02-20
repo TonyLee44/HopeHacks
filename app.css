@@ -1,13 +1,182 @@
 * {
-  margin: 0;
-  padding: 0;
-}
-hero_text p {
-  font-size: 90%;
+    margin: 0;
+    padding: 0;
+  }
+  hero_text p {
+    font-size: 90%;
+  }
+  
+  .percent_ {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #fd6621;
+    background-color: black;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 5px solid #fd6621;
+  }
+  .logo_rsb {
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    height: 300px;
+    width: 350px;
+    border-radius: 80px 10px 80px 10px;
+  }
+  
+  section h1 {
+    margin: 0%;
+  }
+  
+  /* this line corresponds to footer  */
+  * {
+    box-sizing: border-box;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 1114px) {
+    .column {
+      width: 100% !important;
+    }
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+  .RSB_para {
+    font-family: sans-serif;
+    font-size: 25px;
+  
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+  }
+  .row {
+    border-radius: 25px;
+    background: black;
+    background-position: left top;
+    background-repeat: repeat;
+    z-index: 3;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    padding-top: 3%;
+  }
+  
+  .deck_para {
+    font-family: sans-serif;
+    font-size: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+  }
+  
+  .RSB {
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .Decks {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .hero {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  html {
+    font-family: Garamond;
+    font-size: 18px;
+    background-color: #242f3b;
+    color: white;
+  }
+  
+  footer {
+    bottom: 100%;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5%;
+    padding-top: 5%;
+  }
+  
+  .rsb_img {
+    width: 5%;
+    height: 5%;
+    object-fit: cover;
+    overflow: hidden;
+    padding-top: 1%;
+  }
+  .rail {
+    width: 100%;
+    padding-right: 5px;
+    width: 100%;
+  }
+  .hero__wrap {
+    background-image: url("./img/halfpipe.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    /* position: relative;
+    margin-bottom: 250px; */
+  }
+  .header-content {
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    color: #000;
+    transform: translate(-50%, -50%);
+    /* text-shadow: -2px -2px 0 #000; */
+    text-align: center;
+    text-shadow: 2px 2px 1px #fd6621;
+    font-size: 2em;
+  }
+  @media (max-width: 980px) {
+    .logo_rsb {
+      display: none;
+    }
+  
+    .header-content {
+      top: 50%;
+      left: 50%;
+    }
+  }
+  @media (max-width: 450px) {
+    .header-content {
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 500px) {
+    .hero__wrap {
+      background-position: -50px;
+    }
+  }
+  
+/* hero */
+.hero__wrap {
+  padding: 0px;
+  position: relative;
+  height: 90vh;
+  /* width: 50%; */
+  background-image: url("./img/lightbulb.jpeg");
+  background-repeat: no-repeat;
+  /* background-size: cover;
+    opacity: .5; */
 }
 
-.percent_ {
-  text-align: center;
+/* imgs for blocks */
+.map-img {
+  height: 100%;
   width: 100%;
   padding-bottom: 5px;
   border-bottom: 5px solid #fd6621;
@@ -89,8 +258,8 @@ section h1 {
   margin: 0;
   text-align: center;
 }
-
-.hero {
+.pollution-img {
+  height: 100%;
   width: 100%;
   margin-bottom: 0;
 }
@@ -101,109 +270,20 @@ html {
   color: white;
 }
 
-footer {
-  bottom: 100%;
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 5%;
-  padding-top: 5%;
-}
-
-.rsb_img {
-  width: 5%;
-  height: 5%;
-  object-fit: cover;
-  overflow: hidden;
-  padding-top: 1%;
-}
-.rail {
-  width: 100%;
-  padding-right: 5px;
-  width: 100%;
-}
-.hero__wrap {
-  background-image: url("./img/halfpipe.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  /* position: relative;
-  margin-bottom: 250px; */
-}
-.header-content {
-  position: absolute;
-  top: 80%;
-  left: 60%;
-  color: #000;
-  transform: translate(-50%, -50%);
-  /* text-shadow: -2px -2px 0 #000; */
-  text-align: center;
-  text-shadow: 2px 2px 1px #fd6621;
-  font-size: 2em;
-}
-@media (max-width: 980px) {
-  .logo_rsb {
-    display: none;
-  }
-
-  .header-content {
-    top: 50%;
-    left: 50%;
-  }
-}
-@media (max-width: 450px) {
-  .header-content {
-    font-size: 30px;
-  }
-}
-@media (max-width: 500px) {
-  .hero__wrap {
-    background-position: -50px;
-  }
-}
-
-/* hero */
-.hero__wrap {
-padding: 0px;
-position: relative;
-height: 90vh;
-/* width: 50%; */
-background-image: url("./img/lightbulb.jpeg");
-background-repeat: no-repeat;
-/* background-size: cover;
-  opacity: .5; */
-}
-
-/* imgs for blocks */
-.map-img {
-height: 100%;
-width: 100%;
-display: center;
-object-fit: none;
-border-radius: 20px;
-}
-.pollution-img {
-height: 100%;
-width: 100%;
-display: center;
-/* gits  */
-border-radius: 20px;
-}
-
 .modern-img {
-height: 100%;
-width: 100%;
-display: center;
-/* object-fit:contain; */
-border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  display: center;
+  /* object-fit:contain; */
+  border-radius: 20px;
 }
 
 .tesla-img {
-height: 100%;
-width: 100%;
-display: center;
-object-fit: contain;
-border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  display: center;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
 /* buttons */
@@ -249,44 +329,44 @@ width: 10%;
 /* application-Title */
 
 .application-title img {
-position: relative;
-bottom: 5%;
-left: -5%;
-height: 30vh;
-width: 500px;
-display: center;
-object-fit: contain;
-border-radius: 20x;
-background-color: none;
+  position: relative;
+  bottom: 5%;
+  left: -5%;
+  height: 30vh;
+  width: 500px;
+  display: center;
+  object-fit: contain;
+  border-radius: 20x;
+  background-color: none;
 }
 
 #nav-lines {
-padding: 29px;
-display: block;
-color: blue;
-z-index: 1000;
+  padding: 29px;
+  display: block;
+  color: blue;
+  z-index: 1000;
 }
 
 /* Grid boxes */
 header {
-width: 100%;
+  width: 100%;
 }
 ul {
-list-style-type: none;
-overflow: hidden;
-background-color: salmon;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: salmon;
 }
 li {
-float: left;
+  float: left;
 }
 li a {
-display: inline-block;
-color: white;
-padding: 1em;
-text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 1em;
+  text-decoration: none;
 }
 li a:hover {
-background-color: thistle;
+  background-color: thistle;
 }
 .grid-Container {
 display: grid;
@@ -295,13 +375,13 @@ grid-template-columns: repeat(3, 1fr);
 grid-gap: 35px;
 }
 .grid-Container > div {
-text-align: center;
-padding: 20px 0;
+  text-align: center;
+  padding: 20px 0;
 }
 .shopp img {
-height: 150px;
-width: 150px;
-display: center;
+  height: 150px;
+  width: 150px;
+  display: center;
 }
 
 .shopp {
@@ -316,17 +396,17 @@ background-color: lightslategrey;
 padding-bottom: 0;
 }
 .shopp:hover {
-box-shadow: 0 4px 8px 0 black;
+  box-shadow: 0 4px 8px 0 black;
 }
 .cardcon {
-padding: 20px 20px;
+  padding: 20px 20px;
 }
 
 /* mapApi */
 .mapApi {
-position: relative;
-bottom: 75%;
-right: 10%;
+  position: relative;
+  bottom: 75%;
+  right: 10%;
 }
 
 /* pollutionApi */
@@ -343,59 +423,60 @@ left: 202%;
 /* nav bar */
 
 /* body {
-font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
 } */
 
 /* sidenav:hover {
-background-color: thistle;
+  background-color: thistle;
 }
+
 .sidenav {
-height: 100%;
-width: 0;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0px;
-padding-left: 33px;
-background-color: #111;
-overflow-x: hidden;
-transition: 0.3s;
-padding-top: 60px;
-border-radius: 0px 30px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0px;
+  padding-left: 33px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  border-radius: 0px 30px;
 } */
 
 /* content of nav bar */
 /* .sidenav a {
-padding: 8px 8px 8px 32px;
-text-decoration: none;
-font-size: 25px;
-color: #818181;
-display: block;
-transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 .sidenav a:hover {
-color: #f1f1f1;
+  color: #f1f1f1;
 }
 .sidenav .closebtn {
-position: absolute;
-top: 0;
-right: 25px;
-font-size: 36px;
-margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 } */
 /* Making it Responsisve @Media  */
 
 @media only screen and (max-width: 400px) {
-.grid-Container {
-  grid-template-columns: repeat(1, 12fr);
-}
+  .grid-Container {
+    grid-template-columns: repeat(1, 12fr);
+  }
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
   }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 }
