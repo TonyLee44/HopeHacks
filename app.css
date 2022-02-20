@@ -38,6 +38,9 @@
   * {
     box-sizing: border-box;
   }
+  .row{
+    margin-top: 100px;
+  }
   
   .row:after {
     content: "";
@@ -144,7 +147,14 @@
     float: left;
     clear: left;
   }
- 
+  .rail2 img{
+    border: 1px solid navy;
+    /* padding-right: 5px; */
+    width: 50px;
+    height: 50px;
+    float: left;
+    clear: left;
+  }
 
 
   .hero__wrap {
@@ -329,7 +339,7 @@ border: none;
 cursor: pointer;
 border-radius: 5px;
 }
-/* search Bar */
+/* search Bar
 input[type="text"] {
 position: relative;
 left: 65%;
@@ -345,11 +355,11 @@ background-repeat: no-repeat;
 padding: 12px 20px 12px 40px;
 -webkit-transition: width 0.4s ease-in-out;
 transition: width 0.4s ease-in-out;
-}
+} */
 
-input[type="text"]:focus {
+/* input[type="text"]:focus {
 width: 10%;
-}
+} */
 
 /* application-Title */
 
@@ -458,12 +468,13 @@ left: 202%;
 
 /*contact page */
 .ctr input{
-  margin-left: -70em;
+  /* margin-left: -70em; */
   width: 200px;
   height: 50px;
 }
 .ctr {
    text-align: center;
+   border-radius: 10px;
   }
 .ctr form{
   margin-top: 5em;
