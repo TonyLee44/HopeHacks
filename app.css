@@ -42,18 +42,13 @@
     margin-top: 100px;
   }
   
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 1114px) {
-    .column {
-      width: 100% !important;
-    }
-  }
-  .column {
+section {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  background-color: #2196f3;
+}
+.column{
     float: left;
     width: 50%;
     padding: 10px;
@@ -165,39 +160,39 @@
     width: 100%;
     /* position: relative;
     margin-bottom: 250px; */
+}
+.header-content {
+  position: absolute;
+  top: 80%;
+  left: 60%;
+  color: #000;
+  transform: translate(-50%, -50%);
+  /* text-shadow: -2px -2px 0 #000; */
+  text-align: center;
+  text-shadow: 2px 2px 1px #fd6621;
+  font-size: 2em;
+}
+@media (max-width: 980px) {
+  .logo_rsb {
+    display: none;
   }
+
   .header-content {
-    position: absolute;
-    top: 80%;
-    left: 60%;
-    color: #000;
-    transform: translate(-50%, -50%);
-    /* text-shadow: -2px -2px 0 #000; */
-    text-align: center;
-    text-shadow: 2px 2px 1px #fd6621;
-    font-size: 2em;
+    top: 50%;
+    left: 50%;
   }
-  @media (max-width: 980px) {
-    .logo_rsb {
-      display: none;
-    }
-  
-    .header-content {
-      top: 50%;
-      left: 50%;
-    }
+}
+@media (max-width: 450px) {
+  .header-content {
+    font-size: 30px;
   }
-  @media (max-width: 450px) {
-    .header-content {
-      font-size: 30px;
-    }
+}
+@media (max-width: 500px) {
+  .hero__wrap {
+    background-position: -50px;
   }
-  @media (max-width: 500px) {
-    .hero__wrap {
-      background-position: -50px;
-    }
-  }
-  
+}
+
 /* hero */
 .hero__wrap {
   padding: 0px;
