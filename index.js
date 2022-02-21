@@ -79,7 +79,7 @@ axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey
     
     })
 
-    
+
 
   })
   .catch(function (error) {
