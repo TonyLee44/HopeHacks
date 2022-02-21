@@ -44,7 +44,10 @@ app.get('/airquality', (req, res) => {
             //grabs Lat/Long from API
             lat = response.data[0].lat;
             lon = response.data[0].lon;
-        })
+        }).catch(function (e) {
+                            res.send('Invalid Entry')
+            })
+       
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
         let evAPI = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`;
         
