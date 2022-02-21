@@ -45,7 +45,7 @@ app.get('/airquality', (req, res) => {
             lat = response.data[0].lat;
             lon = response.data[0].lon;
         }).catch(function (e) {
-                            res.send('Invalid Entry')
+                res.send('Invalid Entry')
             })
        
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
@@ -59,6 +59,7 @@ app.get('/airquality', (req, res) => {
             const aqiResponse = responses[0];
             const evResponse = responses[1];
 
+            
             let message = `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
 
             //Writes the constructed message onto the page
@@ -69,7 +70,7 @@ app.get('/airquality', (req, res) => {
             console.log('it errored')
         })
     }
-
+})
     // axios.get(latlongAPI)
     //     .then(function (response) {
     //         // handle success
@@ -214,7 +215,7 @@ app.get('/airquality', (req, res) => {
 
     //     //if city is found assign lon and lat
 
-})
+
 //     console.log(geoLocation)
 
 //     console.log(lat, lon);
