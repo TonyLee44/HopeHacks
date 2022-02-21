@@ -24,16 +24,16 @@ app.get('/', (req, res) => {
 })
 
 const axios = require('axios');
+const { message } = require("statuses");
 
 // Make a request for a user with a given ID
 
 
-app.get('/airquality', (req, res) => {
+app.get('/', (req, res) => {
 
     // Take the city and get lon and lat
     let city = req.query.city
     let lat, lon;
-    let responseMsg;
 
     let latlongAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     EVandAQI();
@@ -44,10 +44,11 @@ app.get('/airquality', (req, res) => {
             //grabs Lat/Long from API
             lat = response.data[0].lat;
             lon = response.data[0].lon;
+            console.log(lat,lon)
         }).catch(function (e) {
-                res.send('Invalid Entry')
+                res.render('index', {response: null, error: "Put in valid city"})
             })
-       
+            console.log(lat,lon)
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
         let evAPI = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`;
         
@@ -60,14 +61,17 @@ app.get('/airquality', (req, res) => {
             const evResponse = responses[1];
 
             
-            let message = `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
-
+            
+                let message = `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
+                console.log(message);
+                res.render('index', {data:message, error:null})
+            
             //Writes the constructed message onto the page
-            res.send(message)
+            
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
         })).catch(errors =>{
-            console.log('it errored')
+            console.log('broke')
         })
     }
 })
