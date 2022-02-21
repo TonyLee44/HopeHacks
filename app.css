@@ -223,6 +223,7 @@ border-radius: 5px;
   /* margin-left: -70em; */
   width: 200px;
   height: 50px;
+  border-radius: 5px;
 }
 .ctr {
   display: block;
@@ -231,19 +232,31 @@ border-radius: 5px;
 }
 .ctr form {
   margin-top: 5em;
+  
 }
 .ctr label{
   margin-left: 5em;
   padding: 2em;
   color: black;
+  
 }
 form {
   width: 900px;
-  border: 10px solid black;
+  border: 10px solid whitesmoke;
+  border-radius: 20px;
   display: inline-block;
+  background-color: lightsteelblue;
+  margin-bottom: 50px;
+
 }
 
 /* Making it Responsisve @Media  */
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1114px) {
+  .column {
+    width: 100% !important;
+  }
+}
 
 @media only screen and (max-width: 400px) {
   .grid-Container {
