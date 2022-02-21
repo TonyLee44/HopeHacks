@@ -469,10 +469,12 @@ left: 202%;
   height: 50px;
 }
 .ctr {
+  display: block;
    text-align: center;
    border-radius: 10px;
   }
 .ctr form{
+
   margin-top: 5em;
 }
 .ctr label{
