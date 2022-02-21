@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" href="app.css">
     <title>Document</title>
 </head>
 <body>
 
     <!-- hero / hero img is in app.css under hero_wrap -->
    
-    <div class="hero__wrap">
+    <section class="hero__wrap">
     <!-- search bar -->
         <!-- 
         <form>
         <input type="text" name="search" placeholder="Search..">
         </form> -->
         <div class="application-title">
-            <img src="/img/newlogo.png" alt="">
+            <img src="./img/newlogo.png" alt="">
          </div>
-        </div>
+     </section>
+
+     <div class="container">
+      <fieldset>
+        <form action="/airquality" method="post">
+          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+          <input type="submit" class="ghost-button" value="Get Air Quality">
+          <% if(message !== null){ %>
+            <p><%= message %></p>
+          <% } %>
+  
+          <% if(error !== null){ %>
+            <p><%= error %></p>
+          <% } %>
+        </form>
 
     <!-- nav bar -->
     <!-- <div id="mySidenav" class="sidenav">
@@ -59,18 +73,10 @@
 
     <!-- Grid boxes -->
    
-    <fieldset>
-      <form action="/" method="get">
-        <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-        <input type="submit" class="ghost-button" value="Get Air Quality">
-      </form>
-      
-      
-      
-    </fieldset>
+    
     <section class="grid-Container">
         <div class="shopp-extraApi">
-           
+            <button class="btn-clickMe">click me</button>
             <img class="modern-img" src="/img/taxevirs.jpeg" alt="">
             
             <div class="cardcon"> 
@@ -99,7 +105,6 @@
     <!-- Air pollution percentages -->
     <div class="shopp-pollutionApi">
         <img class="pollution-img" src="/img/airQuality.jpeg" alt="">
-        
          <button class="btn-clickMe">click me</button>
         <div class="cardcon">
         <h2>Air pollution</h2>
@@ -108,7 +113,7 @@
     </section> 
 
     <!--sections with info-->
-    <section style="background-color: 357dcf;">
+    <section style="background-color: rgb(103, 204, 238);">
         <div class="row">
           <div class="column">
             <img class="rail-1" src="./img/tax .jpeg" alt="IRS" />
@@ -119,7 +124,6 @@
                 When presenting your taxes, some of the benefits of buying an electric vehicle are written in the IRC 30D that talks about the qualified plug-in electric drive motor vehicles. You can obtain a Federal Tax created up to USD 7,500. Don’t forget to consult it with your tax preparer, be prepared, and don’t let things slip out of your bag! Click on the link to take you to the IRS page, where you can see if your car is one of the manufacturers to obtain the credits.</p>
           </div>
         </div>
-      
       </section>
       
       <section style="background-color: white;">
@@ -135,7 +139,7 @@
         </div>
       </section>
   
-            <section style="background-color: #357dcf;">
+            <section style="background-color: navy;">
                 <div class="row">
                     <div class="column">
             <h2 class="Decks">Buy an Electric Car!</h2>
@@ -167,6 +171,3 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </html>
-
-
-

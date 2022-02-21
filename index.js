@@ -24,15 +24,19 @@ app.get('/', (req, res) => {
 })
 
 const axios = require('axios');
-const { message } = require("statuses");
+const { response } = require("express");
 
 // Make a request for a user with a given ID
 
+app.get('/airquality', (req, res) => {
+    res.render('index', {message: null, error: "Nope!"})
+})
 
-app.get('/', (req, res) => {
+
+app.post('/airquality', (req, res) => {
 
     // Take the city and get lon and lat
-    let city = req.query.city
+    let city = req.body.city
     let lat, lon;
 
     let latlongAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
@@ -44,9 +48,9 @@ app.get('/', (req, res) => {
             //grabs Lat/Long from API
             lat = response.data[0].lat;
             lon = response.data[0].lon;
-            console.log(lat,lon)
-        }).catch(function (e) {
-                res.render('index', {response: null, error: "Put in valid city"})
+
+        }).catch(function (error) {
+            response.render('index', {message: null, error: "City does not exist!"})
             })
             console.log(lat,lon)
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
@@ -56,22 +60,32 @@ app.get('/', (req, res) => {
         const evRequest = axios.get(evAPI);
 
         //Grabs data from both EV and AQI APIs at the same time and stores data into the array "responses"
-        axios.all([aqiRequest, evRequest]).then(axios.spread((...responses)=>{
+        axios.all([aqiRequest, evRequest], response)
+        .then(axios.spread((...responses)=>{
             const aqiResponse = responses[0];
             const evResponse = responses[1];
-
-            
-            
-                let message = `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
-                console.log(message);
-                res.render('index', {data:message, error:null})
-            
-            //Writes the constructed message onto the page
-            
+            const cityInfo = [];
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
-        })).catch(errors =>{
-            console.log('broke')
+
+
+            let messages = {
+                message: 
+                    `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
+            }
+
+            console.log(messages.message)
+
+            
+
+            cityInfo.push(messages);
+            
+
+            //Writes the constructed message onto the page
+            res.render('index', {message: messages.message, error: null})
+        }))
+        .catch(error =>{
+            res.render('index', {message: null, error: "Put in a valid city"})
         })
     }
 })
@@ -149,77 +163,107 @@ app.get('/', (req, res) => {
     // })
 
 
+// axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
+//   .then(function (response) {
+//     // handle success
+//     console.log(response.data);
+
+//     let lat = response.data[0].lat;
+//     let lon = response.data[0].lon;
+
+//     console.log(lat, lon);
+//     let EVurl = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`
+    
+//     request(EVurl, function (err,response,body2){
+//         if(err){
+//             console.log(`Error: ${err}`)
+//         }
+//         else{
+//             let EVNum = JSON.parse(body2)
+
+//             let message = `There are ${EVNum.length} charging stations within 1 mile of ${city}`
+//             res.send(message);
+//             console.log(message);
+//         }
+//     })
+    
+//     let url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`
+
+//     request(url, function(err,response,body){
+
+//         if(err){
+//             console.log(`Error: ${err}`)
+//         } else{
+//             // console.log(`Body: ${body}`)
+//             // console.log(response);
+
+//             // console.log(body);
+//             let list = JSON.parse(body)
+//             // console.log(`This is my list: ${JSON.stringify(list.list[0].main.aqi)}`);
+//             // console.log(list?.main);
+//             // console.log(list?.main?.aqi);
+//             // console.log(list)
+
+//             let message = `The air quality is: ${JSON.stringify(list.list[0].main.aqi)}`
+//             res.send(message)
+            
+//         }
+    
+//     })
 
 
 
-    //     let url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
+    
+    
+    
+//     const geoLocationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
-    //     request(url, function (err, response, body) {
+//     const geoLocation = request(geoLocationUrl, function(err, response, body) {
+//         //
+//         const parseBody = JSON.parse(body)
 
-    //         if (err) {
-    //             console.log(`Error: ${err}`)
-    //         } else {
-    //             // console.log(`Body: ${body}`)
-    //             // console.log(response);
+//         const lat = parseBody[0].lat;
+//         console.log(parseBody[0].lat)
+//         const lon = parseBody[0].lon;
+//         console.log(parseBody[0].lon)
+//         response.body({
+//             lat,lon
+//         })
+//         /*[
+//   {
+//     name: 'Charlotte',
+//     local_names: {
+//       ru: 'Шарлотт',
+//       ar: 'شارلت',
+//       uk: 'Шарлотт',
+//       ur: 'شارلٹ',
+//       en: 'Charlotte',
+//       fa: 'شارلوت',
+//       mk: 'Шарлот'
+//     },
+//     lat: 35.2272086,
+//     lon: -80.8430827,
+//     country: 'US',
+//     state: 'North Carolina'
+//   }
+// ]
+// */
 
-    //             // console.log(body);
-    //             let list = JSON.parse(body)
-    //             // console.log(`This is my list: ${JSON.stringify(list.list[0].main.aqi)}`);
-    //             // console.log(list?.main);
-    //             // console.log(list?.main?.aqi);
-    //             // console.log(list)
+// //Handle if the city is not found
+//     //if the array is empty, the city is not found!
+//     //return error
 
-    //             let message = `The air quality is: ${JSON.stringify(list.list[0].main.aqi)}`
-    //             res.send(message)
-
-    //         }
-
-    //     })
-    // })
-
-
-
-
-    //     const geoLocationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
-
-    //     const geoLocation = request(geoLocationUrl, function(err, response, body) {
-    //         //
-    //         const parseBody = JSON.parse(body)
-
-    //         const lat = parseBody[0].lat;
-    //         console.log(parseBody[0].lat)
-    //         const lon = parseBody[0].lon;
-    //         console.log(parseBody[0].lon)
-    //         response.body({
-    //             lat,lon
-    //         })
-    //         /*[
-    //   {
-    //     name: 'Charlotte',
-    //     local_names: {
-    //       ru: 'Шарлотт',
-    //       ar: 'شارلت',
-    //       uk: 'Шарлотт',
-    //       ur: 'شارلٹ',
-    //       en: 'Charlotte',
-    //       fa: 'شارلوت',
-    //       mk: 'Шарлот'
-    //     },
-    //     lat: 35.2272086,
-    //     lon: -80.8430827,
-    //     country: 'US',
-    //     state: 'North Carolina'
-    //   }
-    // ]
-    // */
-
-    // //Handle if the city is not found
-    //     //if the array is empty, the city is not found!
-    //     //return error
-
-    //     //if city is found assign lon and lat
-
-
+//     //if city is found assign lon and lat
+    
+   
 //     console.log(geoLocation)
 
 //     console.log(lat, lon);
