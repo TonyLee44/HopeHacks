@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="/app.css">
     <title>Document</title>
 </head>
 <body>
 
     <!-- hero / hero img is in app.css under hero_wrap -->
    
-    <section class="hero__wrap">
+    <div class="hero__wrap">
     <!-- search bar -->
+    <h1>Keep our planet clean</h1>
         <!-- 
         <form>
         <input type="text" name="search" placeholder="Search..">
         </form> -->
         <div class="application-title">
-            <img src="./img/newlogo.png" alt="">
+            <img src="/img/newlogo.png" alt="">
          </div>
-     </section>
+        </div>
 
-     <div class="container">
-      <fieldset>
-        <form action="/airquality" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get Air Quality">
-          <% if(message !== null){ %>
-            <p><%= message %></p>
-          <% } %>
-  
-          <% if(error !== null){ %>
-            <p><%= error %></p>
-          <% } %>
-        </form>
-      </fieldset>
-      </div>
+        <div class="container" style="justify-content: center;">
+          <fieldset>
+            <form action="/airquality" method="post">
+              <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+              <input type="submit" class="ghost-button" value="Get Air Quality">
+              <!-- <% if(message !== null){ %>
+                <p><%= message %></p>
+              <% } %>
+      
+              <% if(error !== null){ %>
+                <p><%= error %></p>
+              <% } %> -->
+            </form>
+          </fieldset>
+          </div>
+
 
     <!-- nav bar -->
     <!-- <div id="mySidenav" class="sidenav">
@@ -78,25 +80,25 @@
     
     <section class="grid-Container">
         <div class="shopp-extraApi">
-            <button class="btn-clickMe">click me</button>
-            <img class="modern-img" src="/img/taxevirs.jpeg" alt="">
+           
+            <img class="modern-img" src="/img/tax_breaks.jpeg" alt="">
             
             <div class="cardcon"> 
-                <h2> Add on number 1 </h2>
+                <h2><a href="https://www.irs.gov/businesses/irc-30d-new-qualified-plug-in-electric-drive-motor-vehicle-credit" target="_blank">IRS Tax Credit</a></h2>
             </div>
         </div>
 
         <div class="shopp-extraApi">
-                <img class="tesla-img" src="/img/tesla.jpeg" alt="">
+                <img class="tesla-img" src="/img/model_x.jpeg" alt="">
               
             <div class="cardcon">
-                 <h2> Add on number 2</h2>
+              <h2><a href="https://www.carvana.com/cars/electric?utm_source=google&utm_medium=sem_nb&utm_term=1&utm_campaign=15848039259&utm_content=133778246564&utm_target=kwd-4455837463&utm_creative=574620900858&utm_device=c&utm_adposition=&gclid=CjwKCAiA6seQBhAfEiwAvPqu1wNyYYhPGXxJYzxWAv0iY4_qBIlEREB4BHhj3L7imkMMznFKn8UebxoClsEQAvD_BwE" target="_blank">EV CARS FOR SALE</a></h2>
             </div>
         </div>
 
     <!-- charging stations / google maps -->
     <div class="shopp-extraApi">
-        <img class="map-img" src="/img/chargingstations.jpeg" alt="">
+        <img class="map-img" src="/img/ev_charge_map.png" alt="">
         
         
         <div class="cardcon">
@@ -106,8 +108,9 @@
 
     <!-- Air pollution percentages -->
     <div class="shopp-pollutionApi">
-        <img class="pollution-img" src="/img/airQuality.jpeg" alt="">
-         <button class="btn-clickMe">click me</button>
+        <img class="pollution-img" src="/img/air_gauge.jpeg" alt="">
+        
+         
         <div class="cardcon">
         <h2>Air pollution</h2>
         </div>
@@ -115,23 +118,25 @@
     </section> 
 
     <!--sections with info-->
-    <section style="background-color: rgb(103, 204, 238);">
+    <section style="background-color: 357dcf;">
         <div class="row">
           <div class="column">
-            <img class="rail-1" src="./img/tax .jpeg" alt="IRS" />
+            <img class="rail-1" src="/img/EV_Tax_incentives.png " alt="IRS" />
           </div>
           <div class="column">
-            <h2 class="RSB">TAX Brakes on Electric Vehicles</h2>
-            <p class="RSB_para">
-                When presenting your taxes, some of the benefits of buying an electric vehicle are written in the IRC 30D that talks about the qualified plug-in electric drive motor vehicles. You can obtain a Federal Tax created up to USD 7,500. Don’t forget to consult it with your tax preparer, be prepared, and don’t let things slip out of your bag! Click on the link to take you to the IRS page, where you can see if your car is one of the manufacturers to obtain the credits.</p>
+            <h2 class="RSB" >TAX Brakes on Electric Vehicles</h2>
+            <p class="RSB_para">When presenting your taxes, some of the benefits of buying an electric vehicle are written in the IRC 30D that talks about the qualified plug-in electric drive motor vehicles. You can obtain a Federal Tax created up to USD 7,500. Don’t forget to consult it with your tax preparer, be prepared, and don’t let things slip out of your bag! Click on the link at the top of the page to take you to the IRS page, where you can see if your car is one of the manufacturers to obtain the credits.
+            </p>
+              
           </div>
         </div>
+      
       </section>
       
-      <section style="background-color: white;">
+      <section style="background-color: 357dcf;">
         <div class="row">
           <div class="column">
-            <img class="rail" src="./img/oxiair.jpeg" alt="Air polution" />
+            <img class="rail" src="/img/CLEAN_Air.jpeg" alt="Air polution" />
           </div>
           <div class="column">
             <h2 class="RSB">Air Polution</h2>
@@ -141,20 +146,23 @@
         </div>
       </section>
   
-            <section style="background-color: navy;">
-                <div class="row">
-                    <div class="column">
-            <h2 class="Decks">Buy an Electric Car!</h2>
-            <img class="rail-2" style="float: left;" src="./img/teslatax.jpeg" alt="boardsliding" />
-            <p  class="deck_para">
-                Did you know that electric cars are the most dependable vehicles on the market, and they will last longer than gas cars with less maintenance to do on them than regular cars?  According to INSIDER, an electric car costs 31% less to service over the first three years than a gas car. An electric car is an all-electric car that means that energy is stored in the batteries making it an Eco-friendly car powered by energy. Some of the biggest markets for EV cars are Tesla, BMW, Ford, Nissan, and many more. Want to buy an EV car but don’t know where? Well, click on the link, and it’ll take you right into a page if you are ready to begin your EV life. Take a drive without harming the environment. 
+       
+            <section style="background-color: 357dcf;">
+              <div class="row">
+                <div class="column">
+                  <img class="rail-3" src="/img/buy_ev.jpeg " alt="IRS" />
+                </div>
+                <div class="column">
+                  <h2 class="RSB" >Buy an Electric Car!</h2>
+                  <p class="ev_para">
+                Did you know that electric cars are the most dependable vehicles on the market, and they will last longer than gas cars with less maintenance to do on them than regular cars?  According to INSIDER, an electric car costs 31% less to service over the first three years than a gas car. An electric car is an all-electric car that means that energy is stored in the batteries making it an Eco-friendly car powered by energy. Some of the biggest markets for EV cars are Tesla, BMW, Ford, Nissan, and many more. Want to buy an EV car but don’t know where? Well, click on the link at the top of the page, and it’ll take you right into a page if you are ready to begin your EV life. Take a drive without harming the environment. 
             </p>
           </div>
         </div>
       </section>
    
 
-      <section class="ctr" style="background-color: white;">
+      <section class="ctr" style="background-color: 357dcf;">
         <form action="process.php" method="post">
          <h3><i>Contact Us</i></h3>
         <input type="text" name="Full Name" placeholder="Full Name">
