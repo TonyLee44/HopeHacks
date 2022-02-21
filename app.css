@@ -128,6 +128,7 @@ footer {
   overflow: hidden;
   padding-top: 1%;
 }
+
 .rail-1{
  position: absolute;
  right: 60%;
@@ -135,13 +136,14 @@ footer {
  top: 1700px;
  border-radius: 6px;
 }
-.rail2 img {
-  border: 1px solid navy;
-  /* padding-right: 5px; */
-  width: 50px;
-  height: 50px;
-  float: left;
-  clear: left;
+.rail-2 {
+  position: absolute;
+  right: 10%;
+  height: 45vh;
+  /* top: 1700px; */
+  border-radius: 6px;
+  top: 373%;
+  
 }
 
 .hero__wrap {
