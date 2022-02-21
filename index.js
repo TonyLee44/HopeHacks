@@ -52,7 +52,8 @@ app.get('/airquality', (req, res) => {
         const evRequest = axios.get(evAPI);
 
         //Grabs data from both EV and AQI APIs at the same time and stores data into the array "responses"
-        axios.all([aqiRequest, evRequest]).then(axios.spread((...responses)=>{
+        axios.all([aqiRequest, evRequest])
+        .then(axios.spread((...responses)=>{
             const aqiResponse = responses[0];
             const evResponse = responses[1];
 
@@ -62,7 +63,8 @@ app.get('/airquality', (req, res) => {
             res.send(message)
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
-        })).catch(errors =>{
+        }))
+        .catch(errors =>{
             console.log('it errored')
         })
     }
@@ -141,64 +143,64 @@ app.get('/airquality', (req, res) => {
     // })
 
 
-axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
-  .then(function (response) {
-    // handle success
-    console.log(response.data);
+// axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
+//   .then(function (response) {
+//     // handle success
+//     console.log(response.data);
 
-    let lat = response.data[0].lat;
-    let lon = response.data[0].lon;
+//     let lat = response.data[0].lat;
+//     let lon = response.data[0].lon;
 
-    console.log(lat, lon);
-    let EVurl = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`
+//     console.log(lat, lon);
+//     let EVurl = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`
     
-    request(EVurl, function (err,response,body2){
-        if(err){
-            console.log(`Error: ${err}`)
-        }
-        else{
-            let EVNum = JSON.parse(body2)
+//     request(EVurl, function (err,response,body2){
+//         if(err){
+//             console.log(`Error: ${err}`)
+//         }
+//         else{
+//             let EVNum = JSON.parse(body2)
 
-            let message = `There are ${EVNum.length} charging stations within 1 mile of ${city}`
-            res.send(message);
-            console.log(message);
-        }
-    })
+//             let message = `There are ${EVNum.length} charging stations within 1 mile of ${city}`
+//             res.send(message);
+//             console.log(message);
+//         }
+//     })
     
-    let url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`
+//     let url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`
 
-    request(url, function(err,response,body){
+//     request(url, function(err,response,body){
 
-        if(err){
-            console.log(`Error: ${err}`)
-        } else{
-            // console.log(`Body: ${body}`)
-            // console.log(response);
+//         if(err){
+//             console.log(`Error: ${err}`)
+//         } else{
+//             // console.log(`Body: ${body}`)
+//             // console.log(response);
 
-            // console.log(body);
-            let list = JSON.parse(body)
-            // console.log(`This is my list: ${JSON.stringify(list.list[0].main.aqi)}`);
-            // console.log(list?.main);
-            // console.log(list?.main?.aqi);
-            // console.log(list)
+//             // console.log(body);
+//             let list = JSON.parse(body)
+//             // console.log(`This is my list: ${JSON.stringify(list.list[0].main.aqi)}`);
+//             // console.log(list?.main);
+//             // console.log(list?.main?.aqi);
+//             // console.log(list)
 
-            let message = `The air quality is: ${JSON.stringify(list.list[0].main.aqi)}`
-            res.send(message)
+//             let message = `The air quality is: ${JSON.stringify(list.list[0].main.aqi)}`
+//             res.send(message)
             
-        }
+//         }
     
-    })
+//     })
 
 
 
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
     
     
     
