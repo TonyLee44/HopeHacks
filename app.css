@@ -349,8 +349,9 @@ width: 10%;
 
 .application-title img {
   position: relative;
-  bottom: 5%;
-  left: -5%;
+  object-position: left;
+  bottom: -1%;
+  left: 6%;
   height: 30vh;
   width: 500px;
   display: center;
@@ -457,10 +458,12 @@ grid-column: 3/4;
   height: 50px;
 }
 .ctr {
-  text-align: center;
-  border-radius: 10px;
-}
-.ctr form {
+  display: block;
+   text-align: center;
+   border-radius: 10px;
+  }
+.ctr form{
+
   margin-top: 5em;
 }
 .ctr label {
