@@ -24,15 +24,21 @@ app.get('/', (req, res) => {
 })
 
 const axios = require('axios');
+const { response } = require("express");
 
 // Make a request for a user with a given ID
 
-
 app.get('/airquality', (req, res) => {
+    res.render('index', {message: null, error: "Nope!"})
+})
+
+
+app.post('/airquality', (req, res) => {
 
     // Take the city and get lon and lat
-    let city = req.query.city
+    let city = req.body.city
     let lat, lon;
+
 
     let latlongAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     EVandAQI();
@@ -43,8 +49,9 @@ app.get('/airquality', (req, res) => {
             //grabs Lat/Long from API
             lat = response.data[0].lat;
             lon = response.data[0].lon;
-        }).catch(function (e) {
-                res.send('City does not exist!')
+
+        }).catch(function (error) {
+            response.render('index', {message: null, error: "City does not exist!"})
             })
        
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
@@ -54,20 +61,32 @@ app.get('/airquality', (req, res) => {
         const evRequest = axios.get(evAPI);
 
         //Grabs data from both EV and AQI APIs at the same time and stores data into the array "responses"
-        axios.all([aqiRequest, evRequest])
+        axios.all([aqiRequest, evRequest], response)
         .then(axios.spread((...responses)=>{
             const aqiResponse = responses[0];
             const evResponse = responses[1];
-
-            let message = `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
-
-            //Writes the constructed message onto the page
-            res.send(message)
+            const cityInfo = [];
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
+
+
+            let messages = {
+                message: 
+                    `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
+            }
+
+            console.log(messages.message)
+
+            
+
+            cityInfo.push(messages);
+            
+
+            //Writes the constructed message onto the page
+            res.render('index', {message: messages.message, error: null})
         }))
-        .catch(errors =>{
-            console.log('it errored')
+        .catch(error =>{
+            res.render('index', {message: null, error: "Put in a valid city"})
         })
     }
 
