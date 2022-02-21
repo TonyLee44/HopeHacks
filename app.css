@@ -1,10 +1,26 @@
+/* hero text */
+.hero__wrap h1{
+  color: whitesmoke;
+  font-family: sans-serif;
+  position:relative;
+  top: 10px;
+  left: 30%;
+  font-size: 9vh;
+}
+/* hero logo */
+.application-title img {
+  position: relative;
+  bottom: 50px;
+  left: 3%;
+  height: 40vh;
+  /* width: 500px; */
+
+}
 html {
-  
   font-size: 18px;
   background-color: #242f3b;
   color: black;
 }
-
 
 body {
   background-color: lightsteelblue;
@@ -104,14 +120,6 @@ section {
   margin-bottom: 5%;
   /* width: 50%; */
   background-image: url("./img/wooooohero.png");
-  
-}
-
-/* img for map */
-.map-img {
-  height: 100%;
-  width: 100%;
-  border-radius: 5%;
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -120,31 +128,33 @@ section {
     width: 100% !important;
   }
 }
+/* img for map */
+.map-img {
+  height: 35vh;
+  width: 40vh;
+  border-radius: 20px;
+}
 /* air pollution img */
 .pollution-img {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 0;
+  height: 35vh;
+  width: 40vh;
+
+  border-radius: 20px;
 }
 
 /* targets car money */
 .modern-img {
-  height: 100%;
-  width: 100%;
-  display: center;
-  /* object-fit:contain; */
+  height: 35vh;
+  width: 40vh;
   border-radius: 20px;
 }
 
 /* tesla img */
 .tesla-img {
-  height: 100%;
-  width: 100%;
-  display: center;
-  object-fit: contain;
+  height: 35vh;
+  width: 40vh;
   border-radius: 20px;
 }
-
 
 .btn-clickMe {
 position: absolute;
@@ -161,18 +171,6 @@ cursor: pointer;
 border-radius: 5px;
 }
 
-.application-title img {
-  position: relative;
-  object-position: left;
-  bottom: -1%;
-  left: 6%;
-  height: 30vh;
-  width: 500px;
-  display: center;
-  object-fit: contain;
-  border-radius: 20x;
-  background-color: none;
-}
 
 
 /* Grid boxes */
@@ -182,10 +180,8 @@ border-radius: 5px;
   background-color: lightsteelblue;
   grid-template-columns: repeat(4, 1fr);
   display: grid;
-  width: fit-content;
   grid-gap: 35px;
-  position:center;
-
+  position: center;
 }
 
 /*contact page */
@@ -212,7 +208,6 @@ form {
   border: 10px solid black;
   display: inline-block;
 }
-
 
 /* Making it Responsisve @Media  */
 
