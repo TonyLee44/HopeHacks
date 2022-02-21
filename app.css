@@ -53,14 +53,24 @@ section {
   padding-bottom: 5%;
   
 }
-/* paragraph for tesla */
-.deck_para {
+.ev_para {
   font-family: sans-serif;
   font-size: 25px;
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 19%;
   text-align: center;
+  padding-bottom: 5%;
+  
+}
+/* paragraph for tesla */
+.deck_para {
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  text-align: center;
+  padding-bottom: 5%;
 }
 /* titles in the TAX and Air */
 .RSB {
@@ -90,12 +100,30 @@ section {
   width: 100%;
   border-radius: 20px;
 }
+.rail {
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 60vh;
+  width: 100%;
+  border-radius: 20px;
+}
 /* targets Tesla photo */
 .rail-2 {
-  position: absolute;
-  right: 10%;
-  height: 45vh;
-  border-radius: 6px;
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 60vh;
+  width: 100%;
+  border-radius: 20px;
+}
+.rail-3 {
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 74vh;
+  width: 100%;
+  border-radius: 20px;
 }
 
 @media (max-width: 980px) {
@@ -163,18 +191,18 @@ section {
 }
 
 .btn-clickMe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #555;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+background-color: #555;
+color: white;
+font-size: 16px;
+padding: 12px 24px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
 }
 
 
@@ -191,7 +219,7 @@ section {
 }
 
 /*contact page */
-.ctr input {
+.ctr input{
   /* margin-left: -70em; */
   width: 200px;
   height: 50px;
@@ -204,7 +232,7 @@ section {
 .ctr form {
   margin-top: 5em;
 }
-.ctr label {
+.ctr label{
   margin-left: 5em;
   padding: 2em;
   color: black;
