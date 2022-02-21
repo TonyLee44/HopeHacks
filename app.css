@@ -74,6 +74,7 @@ section {
   right: 10%;
   height: 45vh;
   border-radius: 6px;
+
 }
 
 @media (max-width: 980px) {
@@ -107,12 +108,7 @@ section {
   
 }
 
-/* img for map */
-.map-img {
-  height: 100%;
-  width: 100%;
-  border-radius: 5%;
-}
+
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 1114px) {
@@ -120,29 +116,33 @@ section {
     width: 100% !important;
   }
 }
+/* img for map */
+.map-img {
+  height: 35vh;
+  width: 40vh;
+  border-radius: 20px;
+}
 /* air pollution img */
 .pollution-img {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 0;
+  height: 35vh;
+  width: 40vh;
+  
+  border-radius: 20px;
 }
 
 /* targets car money */
 .modern-img {
-  height: 100%;
-  width: 100%;
-  display: center;
-  /* object-fit:contain; */
+  height: 35vh;
+  width: 40vh;
   border-radius: 20px;
 }
 
 /* tesla img */
 .tesla-img {
-  height: 100%;
-  width: 100%;
-  display: center;
-  object-fit: contain;
+  height: 35vh;
+  width: 40vh;
   border-radius: 20px;
+  
 }
 
 
@@ -182,9 +182,10 @@ section {
   background-color: lightsteelblue;
   grid-template-columns: repeat(4, 1fr);
   display: grid;
-  width: fit-content;
   grid-gap: 35px;
   position:center;
+  
+  
 
 }
 
