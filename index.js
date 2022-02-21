@@ -33,7 +33,6 @@ app.get('/airquality', (req, res) => {
     // Take the city and get lon and lat
     let city = req.query.city
     let lat, lon;
-    let responseMsg;
 
     let latlongAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     EVandAQI();
@@ -45,7 +44,7 @@ app.get('/airquality', (req, res) => {
             lat = response.data[0].lat;
             lon = response.data[0].lon;
         }).catch(function (e) {
-                            res.send('Invalid Entry')
+                res.send('City does not exist!')
             })
        
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
