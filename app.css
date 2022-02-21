@@ -1,8 +1,8 @@
 /* hero text */
-.hero__wrap h1{
+.hero__wrap h1 {
   color: whitesmoke;
   font-family: sans-serif;
-  position:relative;
+  position: relative;
   top: 10px;
   left: 30%;
   font-size: 9vh;
@@ -14,7 +14,6 @@
   left: 3%;
   height: 40vh;
   /* width: 500px; */
-
 }
 html {
   font-size: 18px;
@@ -51,7 +50,6 @@ section {
   margin-bottom: 5%;
   text-align: center;
   padding-bottom: 5%;
-  
 }
 .ev_para {
   font-family: sans-serif;
@@ -60,7 +58,6 @@ section {
   margin-right: 10%;
   text-align: center;
   padding-bottom: 5%;
-  
 }
 /* paragraph for tesla */
 .deck_para {
@@ -85,11 +82,9 @@ section {
 }
 /* targets each column */
 .column {
-  position:relative;
+  position: relative;
   float: left;
   width: 50%;
-  
-  
 }
 /* Targets photo in Air pollution */
 .rail-1 {
@@ -126,27 +121,6 @@ section {
   border-radius: 20px;
 }
 
-@media (max-width: 980px) {
-  .logo_rsb {
-    display: none;
-  }
-
-  .header-content {
-    top: 50%;
-    left: 50%;
-  }
-}
-@media (max-width: 450px) {
-  .header-content {
-    font-size: 30px;
-  }
-}
-@media (max-width: 500px) {
-  .hero__wrap {
-    background-position: -50px;
-  }
-}
-
 /* hero */
 .hero__wrap {
   height: 90vh;
@@ -156,12 +130,6 @@ section {
   background-image: url("./img/wooooohero.png");
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1114px) {
-  .column {
-    width: 100% !important;
-  }
-}
 /* img for map */
 .map-img {
   height: 35vh;
@@ -191,21 +159,19 @@ section {
 }
 
 .btn-clickMe {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-background-color: #555;
-color: white;
-font-size: 16px;
-padding: 12px 24px;
-border: none;
-cursor: pointer;
-border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
-
-
 
 /* Grid boxes */
 
@@ -219,7 +185,7 @@ border-radius: 5px;
 }
 
 /*contact page */
-.ctr input{
+.ctr input {
   /* margin-left: -70em; */
   width: 200px;
   height: 50px;
@@ -232,13 +198,11 @@ border-radius: 5px;
 }
 .ctr form {
   margin-top: 5em;
-  
 }
-.ctr label{
+.ctr label {
   margin-left: 5em;
   padding: 2em;
   color: black;
-  
 }
 form {
   width: 900px;
@@ -247,28 +211,103 @@ form {
   display: inline-block;
   background-color: lightsteelblue;
   margin-bottom: 50px;
-
 }
 
 /* Making it Responsisve @Media  */
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1114px) {
+@media screen and (max-width: 1314px) {
   .column {
     width: 100% !important;
   }
+  .rail{
+justify-content: center;
+    width: 90%;
+  }
+  .rail-1 {
+    justify-content: center;
+    width: 90%;
+  }
+  .rail-2 {
+    justify-content: center;
+    width: 90%;
+  }
+  .rail-3 {
+    justify-content: center;
+    width: 90%;
+  }
+  .hero__wrap {
+    height: 90vh;
+    width: 100%;
+    margin-bottom: 5%;
+    /* width: 50%; */
+    background-image: url("./img/wooooohero.png");
+  }
+  .grid-Container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  form {
+    width: 100%;
+    border: 10px solid whitesmoke;
+    border-radius: 20px;
+    display: inline-block;
+    background-color: lightsteelblue;
+    margin-bottom: 50px;
+  }
+  .hero__wrap h1 {
+    color: whitesmoke;
+    font-family: sans-serif;
+    position: relative;
+    top: 30px;
+    left: 20%;
+    font-size: 9vh;
+    
+  }
+  .application-title img {
+    position: relative;
+    top: 6px;
+    left: 40%;
+    height: 45vh;
+    /* width: 500px; */
+  }
+  
+  
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 900px) {
   .grid-Container {
-    grid-template-columns: repeat(1, 12fr);
+    grid-template-columns: repeat(1, 2fr);
   }
+  .hero__wrap h1 {
+    color: whitesmoke;
+    font-family: sans-serif;
+    position: relative;
+    top: 30px;
+    left: 10%;
+    font-size: 7vh;
+    
+  }
+  .application-title img {
+    position: relative;
+    top: 60px;
+    left: 25%;
+    height: 40vh;
+    /* width: 500px; */
+  }
+  
 
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-    .sidenav a {
-      font-size: 18px;
-    }
+  .header-content {
+    top: 50%;
+    left: 50%;
+  }
+}
+@media (max-width: 450px) {
+  .header-content {
+    font-size: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .hero__wrap {
+    background-position: -50px;
   }
 }
