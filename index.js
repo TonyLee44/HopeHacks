@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {message: null, error: "Air Quality and Charging Stations"})
 })
 
 const axios = require('axios');
@@ -29,7 +29,7 @@ const { response } = require("express");
 // Make a request for a user with a given ID
 
 app.get('/airquality', (req, res) => {
-    res.render('index', {message: null, error: "Nope!"})
+    res.render('index', {message: null, error: "Invalid city, please try again."})
 })
 
 
