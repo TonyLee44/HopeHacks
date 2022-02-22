@@ -155,6 +155,7 @@
     "string-width": "^4.2.3",
     "strip-ansi": "^6.0.1",
     "strip-json-comments": "^2.0.1",
+    "sudo": "^1.0.3",
     "supports-color": "^5.5.0",
     "to-readable-stream": "^1.0.0",
     "to-regex-range": "^5.0.1",
