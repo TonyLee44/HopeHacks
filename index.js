@@ -29,7 +29,7 @@ const { response } = require("express");
 // Make a request for a user with a given ID
 
 app.get('/airquality', (req, res) => {
-    res.render('index', {message: null, error: "Nope!"})
+    res.render('index', {message: null, error: "Enter A Valid City.."})
 })
 
 
