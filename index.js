@@ -64,7 +64,7 @@ app.post('/airquality', (req, res) => {
         .then(axios.spread((...responses)=>{
             const aqiResponse = responses[0];
             const evResponse = responses[1];
-            const cityInfo = [];
+            //const cityInfo = [];
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
 
@@ -78,7 +78,7 @@ app.post('/airquality', (req, res) => {
 
             
 
-            cityInfo.push(messages);
+            //cityInfo.push(messages);
             
 
             //Writes the constructed message onto the page
