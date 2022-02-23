@@ -37,7 +37,6 @@ app.post('/airquality', (req, res) => {
     let city = req.body.city
     let lat, lon;
 
-
     let latlongAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     EVandAQI();
 
@@ -51,7 +50,7 @@ app.post('/airquality', (req, res) => {
         }).catch(function (error) {
             response.render('index', {message: null, error: "City does not exist!"})
             })
-       
+            console.log(lat,lon)
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
         let evAPI = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`;
         
@@ -63,7 +62,7 @@ app.post('/airquality', (req, res) => {
         .then(axios.spread((...responses)=>{
             const aqiResponse = responses[0];
             const evResponse = responses[1];
-            const cityInfo = [];
+            //const cityInfo = [];
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
 
@@ -77,7 +76,7 @@ app.post('/airquality', (req, res) => {
 
             
 
-            cityInfo.push(messages);
+            //cityInfo.push(messages);
             
 
             //Writes the constructed message onto the page
@@ -87,7 +86,7 @@ app.post('/airquality', (req, res) => {
             res.render('index', {message: null, error: "Put in a valid city"})
         })
     }
-
+})
     // axios.get(latlongAPI)
     //     .then(function (response) {
     //         // handle success
@@ -262,7 +261,7 @@ app.post('/airquality', (req, res) => {
 
 //     //if city is found assign lon and lat
     
-    })
+   
 //     console.log(geoLocation)
 
 //     console.log(lat, lon);
