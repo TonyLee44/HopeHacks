@@ -1,0 +1,323 @@
+/* hero text */
+.hero__wrap h1 {
+  color: whitesmoke;
+  font-family: sans-serif;
+  position: relative;
+  top: 10px;
+  left: 30%;
+  font-size: 9vh;
+}
+/* hero logo */
+.application-title img {
+  position: relative;
+  bottom: 50px;
+  left: 3%;
+  height: 40vh;
+  /* width: 500px; */
+}
+
+fieldset form {
+  position: relative;
+  width: 100%;
+}
+
+fieldset form input {
+  color: #357dcf;
+}
+
+html {
+  font-size: 18px;
+  background-color: #242f3b;
+  color: black;
+}
+
+body {
+  background-color: lightsteelblue;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row {
+  margin-top: 100px;
+}
+/* targets each section of content */
+section {
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #357dcf;
+  border-radius: 3%;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+/* all paragraphs???? */
+.RSB_para {
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  text-align: center;
+  padding-bottom: 5%;
+}
+.ev_para {
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  padding-bottom: 5%;
+}
+/* paragraph for tesla */
+.deck_para {
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  text-align: center;
+  padding-bottom: 5%;
+}
+/* titles in the TAX and Air */
+.RSB {
+  padding-top: 0;
+  text-align: center;
+  /* justify-content: center; */
+}
+/* title for TESLA */
+.Decks {
+  margin: 0;
+  text-align: center;
+}
+/* targets each column */
+.column {
+  position: relative;
+  float: left;
+  width: 50%;
+}
+/* Targets photo in Air pollution */
+.rail-1 {
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 60vh;
+  width: 100%;
+  border-radius: 20px;
+}
+.rail {
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 60vh;
+  width: 100%;
+  border-radius: 20px;
+}
+/* targets Tesla photo */
+.rail-2 {
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 60vh;
+  width: 100%;
+  border-radius: 20px;
+}
+.rail-3 {
+  position: relative;
+  left: 5%;
+  bottom: 3px;
+  height: 74vh;
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* hero */
+.hero__wrap {
+  height: 90vh;
+  width: 100%;
+  margin-bottom: 5%;
+  /* width: 50%; */
+  background-image: url("./img/wooooohero.png");
+}
+
+/* img for map */
+.map-img {
+  height: 35vh;
+  width: 40vh;
+  border-radius: 20px;
+}
+/* air pollution img */
+.pollution-img {
+  height: 35vh;
+  width: 40vh;
+
+  border-radius: 20px;
+}
+
+/* targets car money */
+.modern-img {
+  height: 35vh;
+  width: 40vh;
+  border-radius: 20px;
+}
+
+/* tesla img */
+.tesla-img {
+  height: 35vh;
+  width: 40vh;
+  border-radius: 20px;
+}
+
+.btn-clickMe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Grid boxes */
+
+.grid-Container {
+  text-align: center;
+  background-color: lightsteelblue;
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-gap: 35px;
+  position: center;
+}
+
+/*contact page */
+.ctr input {
+  /* margin-left: -70em; */
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+}
+.ctr {
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+}
+.ctr form {
+  margin-top: 5em;
+}
+.ctr label {
+  margin-left: 5em;
+  padding: 2em;
+  color: black;
+}
+form {
+  width: 900px;
+  border: 10px solid whitesmoke;
+  border-radius: 20px;
+  display: inline-block;
+  background-color: lightsteelblue;
+  margin-bottom: 50px;
+}
+
+/* Making it Responsisve @Media  */
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1314px) {
+  .column {
+    width: 100% !important;
+  }
+  .rail{
+justify-content: center;
+    width: 90%;
+  }
+  .rail-1 {
+    justify-content: center;
+    width: 90%;
+  }
+  .rail-2 {
+    justify-content: center;
+    width: 90%;
+  }
+  .rail-3 {
+    justify-content: center;
+    width: 90%;
+  }
+  .hero__wrap {
+    height: 90vh;
+    width: 100%;
+    margin-bottom: 5%;
+    /* width: 50%; */
+    background-image: url("./img/wooooohero.png");
+  }
+  .grid-Container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  form {
+    width: 100%;
+    border: 10px solid whitesmoke;
+    border-radius: 20px;
+    display: inline-block;
+    background-color: lightsteelblue;
+    margin-bottom: 50px;
+  }
+  .hero__wrap h1 {
+    color: whitesmoke;
+    font-family: sans-serif;
+    position: relative;
+    top: 30px;
+    left: 20%;
+    font-size: 9vh;
+    
+  }
+  .application-title img {
+    position: relative;
+    top: 6px;
+    left: 40%;
+    height: 45vh;
+    /* width: 500px; */
+  }
+  
+  
+}
+
+@media only screen and (max-width: 900px) {
+  .grid-Container {
+    grid-template-columns: repeat(1, 2fr);
+  }
+  .hero__wrap h1 {
+    color: whitesmoke;
+    font-family: sans-serif;
+    position: relative;
+    top: 30px;
+    left: 10%;
+    font-size: 7vh;
+    
+  }
+  .application-title img {
+    position: relative;
+    top: 60px;
+    left: 25%;
+    height: 40vh;
+    /* width: 500px; */
+  }
+  
+
+  .header-content {
+    top: 50%;
+    left: 50%;
+  }
+}
+@media (max-width: 450px) {
+  .header-content {
+    font-size: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .hero__wrap {
+    background-position: -50px;
+  }
+}
