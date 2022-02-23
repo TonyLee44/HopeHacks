@@ -2,9 +2,7 @@ const request = require("request");
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
-const {
-    reset
-} = require("nodemon");
+
 
 const apiKey = "e6f95f46a3dc82ac8e8ff584311ce59b"
 const EVapiKey = 'd4182b2b-8414-4c99-b02a-7322b40cb629'
