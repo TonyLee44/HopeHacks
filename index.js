@@ -7,9 +7,6 @@ const axios = require('axios');
 const apiKey = "e6f95f46a3dc82ac8e8ff584311ce59b"
 const EVapiKey = 'd4182b2b-8414-4c99-b02a-7322b40cb629'
 
-// let city = 'Chicago'
-
-// let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({
@@ -74,10 +71,7 @@ app.post('/airquality', (req, res) => {
 
             console.log(messages.message)
 
-            
-
             //cityInfo.push(messages);
-            
 
             //Writes the constructed message onto the page
             res.render('index', {message: messages.message, error: null})
