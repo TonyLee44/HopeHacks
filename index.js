@@ -88,10 +88,7 @@ app.post('/airquality', (req, res) => {
 
             console.log(messages.message)
 
-            
-
             //cityInfo.push(messages);
-            
 
             //Writes the constructed message onto the page
             res.render('index', {message: messages.message, error: null})
