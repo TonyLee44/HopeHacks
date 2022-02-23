@@ -7,10 +7,6 @@ const axios = require('axios');
 const apiKey = "e6f95f46a3dc82ac8e8ff584311ce59b"
 const EVapiKey = 'd4182b2b-8414-4c99-b02a-7322b40cb629'
 
-// let city = 'Chicago'
-
-// let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
-
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({
     extended: true
@@ -37,7 +33,6 @@ app.post('/airquality', (req, res) => {
     let city = req.body.city
     let lat, lon;
 
-
     let latlongAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     EVandAQI();
 
@@ -51,7 +46,7 @@ app.post('/airquality', (req, res) => {
         }).catch(function (error) {
             response.render('index', {message: null, error: "City does not exist!"})
             })
-       
+            console.log(lat,lon)
         let aqiAPI = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}1&lon=${lon}&appid=${apiKey}`;
         let evAPI = `https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false&latitude=${lat}&longitude=${lon}&distance=1&key=${EVapiKey}`;
         
@@ -63,9 +58,6 @@ app.post('/airquality', (req, res) => {
         .then(axios.spread((...responses)=>{
             const aqiResponse = responses[0];
             const evResponse = responses[1];
-            const cityInfo = [];
-            console.log(aqiResponse.data.list[0].main.aqi);
-            console.log(evResponse.data.length)
 
             let quality = "";
 
@@ -95,7 +87,7 @@ app.post('/airquality', (req, res) => {
 
             
 
-            cityInfo.push(messages);
+            //cityInfo.push(messages);
             
 
             //Writes the constructed message onto the page
