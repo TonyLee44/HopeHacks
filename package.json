@@ -116,7 +116,7 @@
     "mongodb-connection-string-url": "^2.4.2",
     "ms": "^2.0.0",
     "negotiator": "^0.6.3",
-    "node": "^17.4.0",
+    "node": "^16.13.2",
     "nodemon": "^2.0.15",
     "nopt": "^1.0.10",
     "normalize-path": "^3.0.0",
