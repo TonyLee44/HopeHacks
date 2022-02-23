@@ -14,6 +14,7 @@ const EVapiKey = 'd4182b2b-8414-4c99-b02a-7322b40cb629'
 // let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
 app.set('view engine', 'ejs')
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -68,6 +69,8 @@ app.post('/airquality', (req, res) => {
             const cityInfo = [];
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
+
+            
 
 
             let messages = {
