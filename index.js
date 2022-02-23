@@ -67,10 +67,28 @@ app.post('/airquality', (req, res) => {
             console.log(aqiResponse.data.list[0].main.aqi);
             console.log(evResponse.data.length)
 
+            let quality = "";
+
+            if(aqiResponse.data.list[0].main.aqi === 1) {
+                quality = "Good";
+            }
+            if(aqiResponse.data.list[0].main.aqi === 2) {
+                quality = "Fair";
+            }
+            if(aqiResponse.data.list[0].main.aqi === 3) {
+                quality = "Moderate";
+            }
+            if(aqiResponse.data.list[0].main.aqi === 4) {
+                quality = "Moderately Poor";
+            }
+            if(aqiResponse.data.list[0].main.aqi === 5) {
+                quality = "Poor";
+            }
+            
 
             let messages = {
                 message: 
-                    `The air quality is: ${aqiResponse.data.list[0].main.aqi}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
+                    `The air quality is: ${quality}. There are ${evResponse.data.length} EV charging stations within 1 mile of ${city}.`
             }
 
             console.log(messages.message)
