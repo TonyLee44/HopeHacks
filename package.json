@@ -193,5 +193,6 @@
   "bugs": {
     "url": "https://github.com/TonyLee44/HopeHacks/issues"
   },
-  "homepage": "https://github.com/TonyLee44/HopeHacks#readme"
+  "homepage": "https://github.com/TonyLee44/HopeHacks#readme",
+  "devDependencies": {}
 }
